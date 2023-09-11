@@ -1534,6 +1534,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10",
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Newtonsoft.Json >= 13.0.3",
@@ -1542,19 +1543,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FREDY\\.nuget\\packages\\": {}
+    "C:\\Users\\FREDY\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoNetCore\\Task-Net-Core\\Task\\Task.csproj",
+      "projectUniqueName": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\Task-Net-Core\\Task\\Task.csproj",
       "projectName": "Task",
-      "projectPath": "D:\\ProyectoNetCore\\Task-Net-Core\\Task\\Task.csproj",
+      "projectPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\Task-Net-Core\\Task\\Task.csproj",
       "packagesPath": "C:\\Users\\FREDY\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoNetCore\\Task-Net-Core\\Task\\obj\\",
+      "outputPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\Task-Net-Core\\Task\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\FREDY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1562,6 +1568,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1580,6 +1587,12 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[7.0.10, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

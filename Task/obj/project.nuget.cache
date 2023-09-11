@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bQFy8hXdsKZbscWyzcCluVoXzT2Ma4P4EKGk+0RaunBYSW4V+Ej2WagkzXfCL0jONr6GOFLWAiPx7ipoZWvRVA==",
+  "dgSpecHash": "qJ9aVV1n/FZBCNisvQY1fMtQglvXfCZ3jSM4FZPaVHg5kp8oziwoeDSqNMXPPFq81yP2fZAQ36/m4ylHpi7RXQ==",
   "success": true,
-  "projectFilePath": "D:\\ProyectoNetCore\\Task-Net-Core\\Task\\Task.csproj",
+  "projectFilePath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\Task-Net-Core\\Task\\Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FREDY\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",

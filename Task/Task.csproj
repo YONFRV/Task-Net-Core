@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configurations\**" />
+    <Content Remove="Configurations\**" />
+    <EmbeddedResource Remove="Configurations\**" />
+    <None Remove="Configurations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,7 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
+    <Folder Include="Data\" />
+    <Folder Include="Tesk.Tests\" />
   </ItemGroup>
 
 </Project>

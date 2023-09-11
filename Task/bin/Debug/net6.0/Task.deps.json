@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Task/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "7.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.10",
           "Microsoft.Extensions.Logging": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
