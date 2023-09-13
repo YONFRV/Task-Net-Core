@@ -3,6 +3,7 @@
 using Microsoft.EntityFrameworkCore;
 using Task.Data;
 using Task.Services.Task;
+using Task.Services.TypeState;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +18,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //
 
-// Configurar la inyección de dependencia para IRepository y su implementación
-builder.Services.AddSingleton<ITask, TaskEj>();
 
 // Configurar la inyección de dependencia para UserService
-builder.Services.AddScoped<TaskP>();
+builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddScoped<ITypeStateService, TypeStateService>();
+
 
 //
 

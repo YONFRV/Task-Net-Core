@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TaskTests": {
+      "commandName": "Project",
+      "jsWebView2Debugging": true
+    }
+  }
+}

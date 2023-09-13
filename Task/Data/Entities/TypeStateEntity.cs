@@ -9,9 +9,7 @@ public partial class TypeStateEntity
 
     public string Name { get; set; } = null!;
 
-    public DateOnly CreateDate { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateOnly? UpdateDate { get; set; }
-
-    public virtual ICollection<TaskEntity> Tasks { get; set; } = new List<TaskEntity>();
+    public DateTime? UpdateDate { get; set; }
 }
