@@ -51,15 +51,25 @@
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[2.2.10, )"
+              "version": "[3.1.1, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[2.2.10, )"
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.5.0, )"
+              "version": "[17.7.2, )"
             },
             "coverlet.collector": {
               "target": "Package",
