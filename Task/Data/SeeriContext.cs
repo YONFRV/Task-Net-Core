@@ -47,9 +47,6 @@ public partial class SeeriContext : DbContext
                 .HasColumnName("titulo");
             entity.Property(e => e.UpdateDate).HasColumnName("updateDate");
 
-            entity.HasOne(d => d.StateNavigation).WithMany(p => p.Tasks)
-                .HasForeignKey(d => d.State)
-                .HasConstraintName("type_state_id");
         });
 
         modelBuilder.Entity<TypeStateEntity>(entity =>

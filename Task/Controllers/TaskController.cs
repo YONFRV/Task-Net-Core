@@ -8,47 +8,53 @@ namespace Task.Controllers
     public class TaskController : Controller
     {
 
-        private readonly ILogger<TaskController> _logger;
-        private readonly TaskP _taskP;
+        private readonly ITaskService _itask;
 
-        public TaskController(ILogger<TaskController> logger, TaskP taskP)
+        public TaskController( ITaskService itask)
         {
-            _logger = logger;
-            _taskP = taskP;
+            _itask = itask;
         }
 
         [HttpGet]
         [Route("task")]
-        public IActionResult Index()
+        public IActionResult Task()
         {
-            _logger.LogInformation("La acción MyAction se ejecutó correctamente.");
-
-            ResponseModel<string> result = new ResponseModel<string>();
-            _taskP.getByTask("1");
-            return StatusCode(404, new { result });
+            ResponseGeneralModel<string> respons = _itask.FullTask();
+            return StatusCode(respons.Status, new { respons.response });
         }
 
-
-
-        /*[HttpGet]
-        [Route("price")]
-        public async Task<ActionResult<string>> ProicessUser()
+        [HttpGet]
+        [Route("by-task/{idTask}")]
+        public IActionResult ByTask([FromRoute] int idTask)
         {
-            string api_key = Request.Headers.FirstOrDefault(x => x.Key == "api_key").Value;
-            ResponseModel<List<FileCsvModel>> resultado;
-            IPriceService service = new PriceService(_dbcontextMysql);
-            resultado = await service.processValidationPermisos(api_key);
-            return StatusCode(StatusCodes.Status200OK, new { resultado });
+            ResponseGeneralModel<string> respons = _itask.ByTask(idTask);
+            return StatusCode(respons.Status, new { respons.response });
         }
-        
-                 [HttpPost]
-        [Route("inventorystores")]
-        public ActionResult<string> processInventoryStrores([FromHeader] HeaderModel headerData, [FromBody] BodyDataModel warehouse)
+
+        [HttpPost]
+        [Route("save-task")]
+        public IActionResult SaveTask([FromBody] RequestTask dataTask)
         {
-            IInventoryServicesWarehouse inventoryServicesWarehouse = new InventoryServicesWarehouse(_dbcontextMysql, _dbpunoEr);
-            ResponseModel<List<FileCsvModel>> resultado = inventoryServicesWarehouse.processValidationPermisosFilter(headerData.api_key, warehouse);
-            return StatusCode(StatusCodes.Status200OK, new { resultado });
+            ResponseGeneralModel<string> respons = _itask.SaveTask(dataTask);
+            return StatusCode(respons.Status, new { respons.response });
         }
-         */
+
+        [HttpPut]
+        [Route("update-task/{idTask}")]
+        public IActionResult UpdateTask([FromBody] RequestTask dataTask, [FromRoute] int idTask)
+        {
+            dataTask.TaskId = idTask;
+            ResponseGeneralModel<string> respons = _itask.UpdateTask(dataTask);
+            return StatusCode(respons.Status, new { respons.response });
+
+        }
+
+        [HttpDelete]
+        [Route("delete-task/{idTask}")]
+        public IActionResult DeleteTask([FromRoute] int idTask)
+        {
+            ResponseGeneralModel<string> respons = _itask.DeleteTask(idTask);
+            return StatusCode(respons.Status, new { respons.response });
+        }
     }
 }

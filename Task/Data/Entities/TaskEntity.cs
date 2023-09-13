@@ -13,9 +13,7 @@ public partial class TaskEntity
 
     public int? State { get; set; }
 
-    public DateOnly CreateDate { get; set; }
+    public DateTime CreateDate { get; set; }
 
-    public DateOnly? UpdateDate { get; set; }
-
-    public virtual TypeStateEntity? StateNavigation { get; set; }
+    public DateTime? UpdateDate { get; set; }
 }
