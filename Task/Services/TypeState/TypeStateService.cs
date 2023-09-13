@@ -12,7 +12,7 @@ namespace Task.Services.TypeState
     /// </summary>
     public class TypeStateService : ITypeStateService
     {
-        private readonly ILogger<TaskService> _logger;
+        private readonly ILogger<TypeStateService> _logger;
         private readonly SeeriContext _context;
         private ResponseGeneralModel<string> responseProcess;
         private TypeStateEntity? typeState;
@@ -21,7 +21,7 @@ namespace Task.Services.TypeState
         private int stateCodeTrue = 200;
 
 
-        public TypeStateService(ILogger<TaskService> logger, SeeriContext seeriContext)
+        public TypeStateService(ILogger<TypeStateService> logger, SeeriContext seeriContext)
         {
             _context = seeriContext;
             _logger = logger;
@@ -44,7 +44,7 @@ namespace Task.Services.TypeState
                 }
                 else
                 {
-                    responseProcess = response.ResponseTrue("sin datos", stateCodeTrue, "");
+                    responseProcess = response.ResponseTrue("sin datos", stateCodeFail, "");
                 }
             }
             catch (Exception ex)
