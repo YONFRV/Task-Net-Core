@@ -18,7 +18,13 @@ namespace Task.Controllers
         private readonly IPutTaskService _iPutTaskService;
         private readonly IDeleteTaskService _iDeleteTaskService;
 
-        public TaskController(IGetAllTaskService getAllTaskService, IGetByTaskService getByTaskService, IPostTaskService postTaskService, IPutTaskService putTaskService, IDeleteTaskService deleteTaskService)
+        public TaskController(
+            IGetAllTaskService getAllTaskService,
+            IGetByTaskService getByTaskService,
+            IPostTaskService postTaskService,
+            IPutTaskService putTaskService,
+            IDeleteTaskService deleteTaskService
+            )
         {
             _iGetAllTaskService = getAllTaskService;
             _iGetByTaskService = getByTaskService;

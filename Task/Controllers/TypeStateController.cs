@@ -18,7 +18,13 @@ namespace Task.Controllers
         private readonly IPutTypeStateService _iPutTypeStateService;
         private readonly IDeleteTypeStateService _iDeleteTypeStateService;
 
-        public TypeStateController(IGetAllTypeStateService iGetAllTypeStateService, IGetByTypeStateService iGetByTypeStateService, IPostSaveTypeStateService iPostSaveTypeStateService, IPutTypeStateService iPutTypeStateService, IDeleteTypeStateService iDeleteTypeStateService)
+        public TypeStateController(
+            IGetAllTypeStateService iGetAllTypeStateService, 
+            IGetByTypeStateService iGetByTypeStateService, 
+            IPostSaveTypeStateService iPostSaveTypeStateService, 
+            IPutTypeStateService iPutTypeStateService, 
+            IDeleteTypeStateService iDeleteTypeStateService
+            )
         {
             _iGetAllTypeStateService = iGetAllTypeStateService;
             _iGetByTypeStateService = iGetByTypeStateService;
