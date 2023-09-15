@@ -24,7 +24,7 @@ namespace Task.Controllers
             IPostSaveTypeStateService iPostSaveTypeStateService, 
             IPutTypeStateService iPutTypeStateService, 
             IDeleteTypeStateService iDeleteTypeStateService
-            )
+        )
         {
             _iGetAllTypeStateService = iGetAllTypeStateService;
             _iGetByTypeStateService = iGetByTypeStateService;

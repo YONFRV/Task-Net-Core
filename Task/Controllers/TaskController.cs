@@ -24,7 +24,7 @@ namespace Task.Controllers
             IPostTaskService postTaskService,
             IPutTaskService putTaskService,
             IDeleteTaskService deleteTaskService
-            )
+        )
         {
             _iGetAllTaskService = getAllTaskService;
             _iGetByTaskService = getByTaskService;
