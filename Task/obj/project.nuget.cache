@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W3F2SfMd+hXdbqqTLrRBOZOsYUWKtwmx37Plx+fcUyZR3iHVXyU3+7O0f0c6LN9+FjqxQenrWJqasgr/qzaTJQ==",
+  "dgSpecHash": "yk90HvauTsBjyqG8AFJ9syu/QS1u4dzTOAomdmsZb9LLVIMd7fZJhJ9PC7TKPJxvDMPHeuXbRphcgQgnDAB8lQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\Task-Net-Core\\Task\\Task.csproj",
+  "projectFilePath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FREDY\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

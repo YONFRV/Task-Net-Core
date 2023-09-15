@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Task.Models;
-using Task.Services.Task;
+using Task.Services.Task.DeleteTaskService;
+using Task.Services.Task.GetByTaskService;
+using Task.Services.Task.GetTaskService;
+using Task.Services.Task.PostTaskService;
+using Task.Services.Task.PutTaskService;
 
 namespace Task.Controllers
 {
@@ -8,26 +12,34 @@ namespace Task.Controllers
     public class TaskController : Controller
     {
 
-        private readonly ITaskService _itask;
+        private readonly IGetAllTaskService _iGetAllTaskService;
+        private readonly IGetByTaskService _iGetByTaskService;
+        private readonly IPostTaskService _iPostTaskService;
+        private readonly IPutTaskService _iPutTaskService;
+        private readonly IDeleteTaskService _iDeleteTaskService;
 
-        public TaskController( ITaskService itask)
+        public TaskController(IGetAllTaskService getAllTaskService, IGetByTaskService getByTaskService, IPostTaskService postTaskService, IPutTaskService putTaskService, IDeleteTaskService deleteTaskService)
         {
-            _itask = itask;
+            _iGetAllTaskService = getAllTaskService;
+            _iGetByTaskService = getByTaskService;
+            _iPostTaskService = postTaskService;
+            _iPutTaskService = putTaskService;
+            _iDeleteTaskService = deleteTaskService;
         }
 
         [HttpGet]
         [Route("task")]
-        public IActionResult Task()
+        public IActionResult GetAllTask()
         {
-            ResponseGeneralModel<string> respons = _itask.FullTask();
+            ResponseGeneralModel<string> respons = _iGetAllTaskService.GetAllTask();
             return StatusCode(respons.Status, new { respons.response });
         }
 
         [HttpGet]
         [Route("by-task/{idTask}")]
-        public IActionResult ByTask([FromRoute] int idTask)
+        public IActionResult GetByTask([FromRoute] int idTask)
         {
-            ResponseGeneralModel<string> respons = _itask.ByTask(idTask);
+            ResponseGeneralModel<string> respons = _iGetByTaskService.GetByTask(idTask);
             return StatusCode(respons.Status, new { respons.response });
         }
 
@@ -35,7 +47,7 @@ namespace Task.Controllers
         [Route("save-task")]
         public IActionResult SaveTask([FromBody] RequestTask dataTask)
         {
-            ResponseGeneralModel<string> respons = _itask.SaveTask(dataTask);
+            ResponseGeneralModel<string> respons = _iPostTaskService.SaveTask(dataTask);
             return StatusCode(respons.Status, new { respons.response });
         }
 
@@ -44,7 +56,7 @@ namespace Task.Controllers
         public IActionResult UpdateTask([FromBody] RequestTask dataTask, [FromRoute] int idTask)
         {
             dataTask.TaskId = idTask;
-            ResponseGeneralModel<string> respons = _itask.UpdateTask(dataTask);
+            ResponseGeneralModel<string> respons = _iPutTaskService.UpdateTask(dataTask);
             return StatusCode(respons.Status, new { respons.response });
 
         }
@@ -53,7 +65,7 @@ namespace Task.Controllers
         [Route("delete-task/{idTask}")]
         public IActionResult DeleteTask([FromRoute] int idTask)
         {
-            ResponseGeneralModel<string> respons = _itask.DeleteTask(idTask);
+            ResponseGeneralModel<string> respons = _iDeleteTaskService.DeleteTask(idTask);
             return StatusCode(respons.Status, new { respons.response });
         }
     }

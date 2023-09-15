@@ -2,24 +2,24 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Text.Json;
 using Task.Data;
 using Task.Data.Entities;
 using Task.Models;
+using Task.Services.TypeStateService.GetAllTypeStateService;
 
 namespace Task.Services.TypeState.Tests
 {
     [TestClass()]
-    public class TypeStateServiceTests
+    public class GetAllTypeStateServiceTests
     {
 
         [TestMethod()]
-        public void FullTypeStateTrueTest()
+        public void GetAllTypeStateTrueTest()
         {
             // Arrange
             var seeriContext = new Mock<SeeriContext>();
-            var iTypeState = new Mock<ITypeStateService>();
-            var logger = new Mock<ILogger<TypeStateService>>();
+            var iTypeState = new Mock<IGetAllTypeStateService>();
+            Mock<ILogger<GetAllTypeStateService>> logger = new Mock<ILogger<GetAllTypeStateService>>();
             List<TypeStateEntity> listTypeState = new List<TypeStateEntity>
                 {
                     new TypeStateEntity { TypeStateId = 1, Name = "Prueba1", CreateDate = DateTime.Now },
@@ -32,38 +32,38 @@ namespace Task.Services.TypeState.Tests
             mockSet.As<IQueryable<TypeStateEntity>>().Setup(m => m.GetEnumerator()).Returns(listTypeState.AsQueryable().GetEnumerator());
             seeriContext.Setup(c => c.TypeStates).Returns(mockSet.Object);
             // Act
-            var service = new TypeStateService(logger.Object, seeriContext.Object);
-            var result = service.FullTypeState();
+            var service = new GetAllTypeStateService(logger.Object, seeriContext.Object);
+            var result = service.GetAllTypeState();
             // Assert
             Assert.AreEqual(result.Status, 200);
         }
 
         [TestMethod()]
-        public void FullTypeStateFalseTest()
+        public void GetAllTypeStateFalseTest()
         {
             //Arrange
             var seeriContext = new Mock<SeeriContext>();
-            var itypeState = new Mock<ITypeStateService>();
-            var logger = new Mock<ILogger<TypeStateService>>();
-            var service = new TypeStateService(logger.Object, seeriContext.Object);
-            itypeState.Setup(rs => rs.FullTypeState()).Returns(new ResponseGeneralModel<string> { });
+            var itypeState = new Mock<IGetAllTypeStateService>();
+            var logger = new Mock<ILogger<GetAllTypeStateService>>();
+            var service = new GetAllTypeStateService(logger.Object, seeriContext.Object);
+            itypeState.Setup(rs => rs.GetAllTypeState()).Returns(new ResponseGeneralModel<string> { });
             //Act
-            var result = service.FullTypeState();
+            var result = service.GetAllTypeState();
             //Assert
             Assert.AreEqual(result.Status, 404);
         }
 
         [TestMethod()]
-        public void FullTypeStateFalseTest_WhenExceptionOccurs()
+        public void GetAllTypeStateFalseTest_WhenExceptionOccurs()
         {
             //Arrange
             var seeriContext = new Mock<SeeriContext>();
-            var itypeState = new Mock<ITypeStateService>();
-            var logger = new Mock<ILogger<TypeStateService>>();
-            var service = new TypeStateService(logger.Object, seeriContext.Object);
-            itypeState.Setup(rs => rs.FullTypeState()).Returns(new ResponseGeneralModel<string> { });
+            var itypeState = new Mock<IGetAllTypeStateService>();
+            var logger = new Mock<ILogger<GetAllTypeStateService>>();
+            var service = new GetAllTypeStateService(logger.Object, seeriContext.Object);
+            itypeState.Setup(rs => rs.GetAllTypeState()).Returns(new ResponseGeneralModel<string> { });
             //Act
-            var result = service.FullTypeState();
+            var result = service.GetAllTypeState();
             //Assert
             Assert.AreEqual(result.Status, 404);
             Assert.AreEqual(result.response.warning, true);
