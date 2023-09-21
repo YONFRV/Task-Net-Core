@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\Task.csproj": {}
+    "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyect\\NetCore\\Task-Net-Core\\Task\\Task.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\Task.csproj": {
+    "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyect\\NetCore\\Task-Net-Core\\Task\\Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\Task.csproj",
+        "projectUniqueName": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyect\\NetCore\\Task-Net-Core\\Task\\Task.csproj",
         "projectName": "Task",
-        "projectPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\Task.csproj",
+        "projectPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyect\\NetCore\\Task-Net-Core\\Task\\Task.csproj",
         "packagesPath": "C:\\Users\\FREDY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyectos\\NET CORE\\Task-Net-Core\\Task\\obj\\",
+        "outputPath": "C:\\Users\\FREDY\\OneDrive\\Escritorio\\Proyect\\NetCore\\Task-Net-Core\\Task\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
